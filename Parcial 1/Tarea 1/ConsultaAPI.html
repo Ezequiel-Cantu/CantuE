@@ -7,10 +7,19 @@
 <title>ConsultaAPI</title>
 </head>
 <body>
-    <img>
+    <img id="imagen">
+    <button id="Fetch"> Fetch </button>
     <script>
-        fetch("https://docs.nekos.best/") .then(respuesta => respuesta.json())
-        .then( datos => console.log(document.getElementById('imagen').src=datos.url))
+
+        document.getElementById('boton').addEventListener('click',function() {
+            Peticion();
+        })
+
+        function Peticion(){
+            fetch("https://cataas.com/") .then(respuesta => respuesta.json())
+            .then( datos => console.log(document.getElementById('imagen').src=datos.url))
+        }
+        
     </script>
 </body>
 

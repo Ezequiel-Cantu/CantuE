@@ -17,7 +17,7 @@
         });
 
         function Peticion(){
-            fetch("https://http.cat/[status_code].jpg") .then(respuesta => respuesta.json())
+            fetch("https://http.cat/[status_code]") .then(respuesta => respuesta.json())
             .then( datos => console.log(document.getElementById('imagen').src=datos.url))
         }
         

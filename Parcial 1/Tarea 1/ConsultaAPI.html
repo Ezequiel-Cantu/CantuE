@@ -19,7 +19,7 @@
         function Peticion(){
             fetch("https://http.cat/[status_code]") .then(respuesta => respuesta.json())
             .then( datos => console.log(document.getElementById('imagen').src=datos.url))
-        }
+        };
         
     </script>
 </body>

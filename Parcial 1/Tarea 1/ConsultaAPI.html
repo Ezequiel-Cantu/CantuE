@@ -8,7 +8,7 @@
 <title>ConsultaAPI</title>
 </head>
 <body>
-    <img id="imagen" url="https://http.cat/[status_code]">
+    <img id="imagen" url="https://api.thecatapi.com/v1/images/search">
     <button id="Fetch"> Fetch </button>
     <script>
 
@@ -17,7 +17,7 @@
         });
 
         function Peticion(){
-            fetch("https://http.cat/[status_code]") .then(respuesta => respuesta.json())
+            fetch("https://api.thecatapi.com/v1/images/search") .then(respuesta => respuesta.json())
             .then( datos => console.log(document.getElementById('imagen').src=datos.url))
         };
         

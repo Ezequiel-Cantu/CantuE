@@ -13,6 +13,7 @@
         document.getElementById('Fetch').addEventListener('click',async function() {
             let datos = await Peticion();
             console.log(datos)
+            document.getElementById('imagen').src=datos.url
         });
 
         async function Peticion(){

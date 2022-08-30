@@ -17,7 +17,7 @@
         });
 
         function Peticion(){
-            fetch("https://crossuniverse.psychpsyo.com/images/cards/en/U00031.jpg") .then(respuesta => respuesta.json())
+            fetch("https://foodish-api.herokuapp.com/images/burger/burger101.jpg") .then(respuesta => respuesta.json())
             .then( datos => console.log(document.getElementById('imagen').src=datos.url))
         };
         

@@ -15,8 +15,9 @@
         });
 
         function Peticion(){
-            fetch("https://cataas.com/api/cats?tags=tag1,tag2&skip=0&limit=10") .then(respuesta => respuesta.json())
-            .then( datos => console.log(document.getElementById('imagen').src=datos.url))
+            var completo = "https://cataas.com"
+            fetch("https://cataas.com//cat/gif?json=true") .then(respuesta => respuesta.json())
+            .then( datos => console.log(document.getElementById('imagen').src= (completo+datos.url)))
         };
         
     </script>

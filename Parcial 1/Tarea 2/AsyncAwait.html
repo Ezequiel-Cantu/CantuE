@@ -3,21 +3,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="Style.css" >
     <title>Async - Await</title>
 </head>
 <body>
-    <img id="imagen">
-    <button id="Fetch"> Fetch </button>
+</br></br></br></br>
+<center>
+<img id="imagen"> </br></br>
+<button id="Random"> Random </button>
+</center>
     <script>
 
-        document.getElementById('Fetch').addEventListener('click',async function() {
+        document.getElementById('Random').addEventListener('click',async function() {
             let datos = await Peticion();
             console.log(datos)
-            document.getElementById('imagen').src=datos.url
-        });
+            document.getElementById('imagen').src=(completo+datos.url)
 
         async function Peticion(){
-            let resp = await fetch("https://api.waifu.pics/sfw/waifu") 
+            var completo = "https://cataas.com"
+            let resp = await fetch("https://cataas.com//cat/gif?json=true") 
             let dato = await resp.json();
             return dato;
         };

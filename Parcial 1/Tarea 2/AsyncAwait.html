@@ -15,12 +15,13 @@
     <script>
 
         document.getElementById('Random').addEventListener('click',async function() {
+            var completo = "https://cataas.com"
             let datos = await Peticion();
             console.log(datos)
             document.getElementById('imagen').src=(completo+datos.url)
+        });
 
         async function Peticion(){
-            var completo = "https://cataas.com"
             let resp = await fetch("https://cataas.com//cat/gif?json=true") 
             let dato = await resp.json();
             return dato;

@@ -15,7 +15,7 @@
         });
 
         function Peticion(){
-            fetch("https://cataas.com//cat/gif") .then(respuesta => respuesta.json())
+            fetch("https://cataas.com/cat/gif") .then(respuesta => respuesta.json())
             .then( datos => console.log(document.getElementById('imagen').src=datos.url))
         };
         

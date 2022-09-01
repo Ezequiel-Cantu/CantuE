@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuck Norris</title>
+</head>
+<body>
+    <center>
+    <label for="nombre">Nombre</label>
+    <input id= "nombre" type="text"> </br>
+    <label for="apellido">Apellido</label>
+    <input id= "apellido" type="text">
+
+</br>
+<button id="Boton">Ingresar</button>
+</center>
+<textarea id="Broma"></textarea>
+
+<script>
+
+document.getElementById("Boton"). addEventListener("click", function(){
+
+});
+
+async function Jokes(){
+
+    //Leer las variables
+    let Nom = document.getElementById("nombre").value;
+    let Ape = document.getElementById("apellido").value;
+    let Peticion = "https://api.icndb.com/jokes/random?firstName="+Nom+"&lastName="+Ape;
+    
+    //Peticion
+    let headersList = {
+    "Accept": "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+   }
+   let response = await fetch(Peticion, { 
+     method: "GET",
+     headers: headersList
+   });
+   let data = await response.text();
+   console.log(data);
+}
+
+</script>
+</body>
+</html>
+   

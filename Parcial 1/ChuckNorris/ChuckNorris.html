@@ -28,6 +28,7 @@
 
     <script>
         document.getElementById('Boton').addEventListener('click',async function(){
+            //Leerlos sin necesidad de usar variables, tomando el valor directamente del text
             console.log(nombre.value);
             console.log(apellido.value);
             let dato = await Peticion();
@@ -37,8 +38,10 @@
         });
 
         async function Peticion(){
+            //Concatenar directamente los valores en el fetch
             let respuesta = await fetch ("http://api.icndb.com/jokes/random?firstName="+nombre.value+"&lastName="+apellido.value);
             let datojson = await respuesta.json();
+            //Regresa el objeto con la broma
             return datojson;
         }
     </script>

@@ -1,7 +1,11 @@
 
 {
     "Usuario": {
-        
+        "100": {"nombre" : "Ezequiel", "apellido":"Cantu", "telefono":"8673151506"},
+        "200": {"nombre" : "Maro", "apellido":"Hernandez", "telefono":"8675658546"},
+        "300": {"nombre" : "Silvia", "apellido":"Castillo", "telefono":"8677894523"},
+        "400": {"nombre" : "Lesly", "apellido":"Garcia", "telefono":"86721549679"},
+        "500": {"nombre" : "Andrea", "apellido":"Martinez", "telefono":"8673941356"}
     }
 }
 

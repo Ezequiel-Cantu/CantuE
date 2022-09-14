@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="Style.css" >
+    <title>Fetch en navegador</title>
+</head>
+<body>
+</br></br></br></br>
+    <center>
+    <button id="boton"> Fetch desde navegador </button>
+    </center>
+    <script>
+
+        document.getElementById('boton').addEventListener('click',function() {
+            Peticion();
+        });
+
+        function Peticion(){
+            fetch("https://localhost:8082") .then(respuesta => respuesta.text())
+            .then( datos => console.log(datos.url))
+        };
+        
+    </script>
+</body>
+</html>

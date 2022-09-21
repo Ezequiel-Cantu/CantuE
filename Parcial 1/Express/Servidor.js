@@ -2,14 +2,22 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 
-app.use(cors({ origin: "http://localhost:8082"}))
+app.use(cors({ origin: "http://localhost:8080"}))
 
 app.get('/',(req,res)=>{
-    res.send('Servidor express en funcion')
+    //res.send('Servidor express en funcion')
+    res.sendFile('./Static/Index.html',{root: _dirname},(err) => {console.log('Achivo enviado correctamente')})
 });
 app.post('/',(req,res)=>{
-    res.send('Post hecho con el servidor Express')
+    res.json({usuario: 'Ezequiel'})
 });
+
+app.use((req,res) => {
+    res.statu(404).sendFile('./Static/404.html',{root: _dirname})
+});
+
 app.listen(8082,(req,res)=>{
     console.log('Server escuchando por puerto 8082')
+    console.log(_dirname)
+    console.log(__filename)
 });

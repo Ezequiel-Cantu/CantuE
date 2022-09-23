@@ -1,6 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const { text } = require('express');
+var morgan = require('morgan')
+var fs = require('fs')
+var path = require('path')
+
+
 const app = express();
 
 app.use(cors({ origin: "http://localhost:8080"}))
@@ -8,6 +12,19 @@ app.use(cors({ origin: "http://localhost:8080"}))
 //Middleware
 app.use(express.text())
 app.use(express.json())
+
+var accessLogStream=fs.createWriteStream(path.join(__dirname, 'acces.log'), { flags: 'a'})
+app.use(morgan('combined',{stream: accessLogStream}))
+
+/* app.use(morgan('combined')) */
+
+app.use((req,res,next)=>{
+    console.log("PRIMER funcion middleware")
+    next()
+},(req,res,next)=>{
+    console.log("SEGUNDA funcion middleware")
+    next()
+})
 
 app.get('/',(req,res)=>{
     //res.send('Servidor express en funcion')

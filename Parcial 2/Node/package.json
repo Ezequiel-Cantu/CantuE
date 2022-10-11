@@ -1,0 +1,22 @@
+{
+  "name": "paquete",
+  "version": "1.0.0",
+  "description": "Sin descripcion",
+  "main": "Modulo.js",
+  "scripts": {
+    "test": "error"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezequiel-Cantu/CantuE.git"
+  },
+  "keywords": [
+    "Gleeclub19"
+  ],
+  "author": "Ezequiel Cantu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ezequiel-Cantu/CantuE/issues"
+  },
+  "homepage": "https://github.com/Ezequiel-Cantu/CantuE#readme"
+}

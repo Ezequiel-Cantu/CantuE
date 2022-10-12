@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuck Norris</title>
+    <title>Modulo Estatico y Dinamico</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -26,26 +26,51 @@
     </center>
 
     <script type ="module">
+        //Estatico
         // {pasarMayusc, SinEspacios} from './moduloesm.js'
-        import * as funciones from './moduloesm.js'
+        // import * as funciones from './moduloesm.js'
+        //document.getElementById("btn").addEventListener("click", function(){
+        //    let cade = document.getElementById("cadena").value
+        //   let cadmay = funciones.pasarMayusc(cade)
+        //    console.log(cadmay)
+        //    document.getElementById("resultado").value = cadmay
+        //})
+
+        //document.getElementById("btn2").addEventListener("click", function(){
+        //    let cade = document.getElementById("cadena").value
+        //    let cadsin = funciones.SinEspacios(cade)
+        //    console.log(cadsin)
+        //    document.getElementById("resultado").value = cadsin
+        //})
+        //document.getElementById("btn3").addEventListener("click", function(){
+        //    let cade = document.getElementById("cadena").value
+        //    let cadlon = funciones.Contar(cade)
+        //    console.log(cadlon)
+        //    document.getElementById("resultado").value = cadlon
+        //}) 
+
+        //Dinamico
         document.getElementById("btn").addEventListener("click", function(){
-            let cade = document.getElementById("cadena").value
-            let cadmay = funciones.pasarMayusc(cade)
-            console.log(cadmay)
-            document.getElementById("resultado").value = cadmay
+            import('./moduloesm.js')
+            .then(function(modulo) { 
+                let cadmay = modulo.pasarMayusc(document.getElementById("cadena").value)
+                document.getElementById("resultado").value = cadmay
+            })
         })
 
         document.getElementById("btn2").addEventListener("click", function(){
-            let cade = document.getElementById("cadena").value
-            let cadsin = funciones.SinEspacios(cade)
-            console.log(cadsin)
-            document.getElementById("resultado").value = cadsin
+            import('./moduloesm.js')
+            .then(function(modulo) { 
+                let cadsin = modulo.SinEspacios(document.getElementById("cadena").value)
+                document.getElementById("resultado").value = cadsin
+            })
         })
         document.getElementById("btn3").addEventListener("click", function(){
-            let cade = document.getElementById("cadena").value
-            let cadlon = funciones.Contar(cade)
-            console.log(cadlon)
-            document.getElementById("resultado").value = cadlon
+            import('./moduloesm.js')
+            .then(function(modulo) { 
+                let cadlon = modulo.Contar(document.getElementById("cadena").value)
+                document.getElementById("resultado").value = cadlon
+            })
         })
     </script>
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql2 = require('mysql2/promise');
+const cors = require('cors');
 
 
 const pool = mysql2.createPool({
@@ -11,9 +12,16 @@ const pool = mysql2.createPool({
 });
 
 const app = express();
+app.use(cors({ origin: "http://localhost:8080"}))
 
 app.use(express.text())
 app.use(express.json())
+
+
+app.get('/usuario', async(req,res) =>{
+    const [responseBD] = await pool.execute('SELECT * FROM usuario');
+    res.json(responseBD);
+});
 
 app.get('/usuario/:idUsuario', async(req,res) =>{
     const ID = req.params.idUsuario;

@@ -1,0 +1,8 @@
+[
+    {
+     "Nombre": "Ezequiel",
+     "Apellido": "Cantu",
+     "Carrera" : "Ing.Sistemas Computacionales",
+     "Materias" : ["API REST","Conmutacion de Redes", "Base de Datos"]
+    }
+]

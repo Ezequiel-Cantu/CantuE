@@ -17,7 +17,7 @@ app.use(cors({ origin: "http://localhost:8080"}))
 app.use(express.text())
 app.use(express.json())
 
-app.use('./usuario', rutaUsuario);
+app.use('./usuario', rutaUsuario.router);
 
 app.listen(8082,(req,res) => {
     console.log('Este server esta escuchando por puerto 8082');

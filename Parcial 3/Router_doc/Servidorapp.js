@@ -42,6 +42,7 @@ app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerDocs));
 
 app.listen(8082,(req,res) => {
     console.log('Este server esta escuchando por puerto 8082');
+    console.log(__dirname);
 });
 
 
